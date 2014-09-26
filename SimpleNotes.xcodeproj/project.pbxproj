@@ -24,6 +24,8 @@
 		1F42EFE819097ED100B91F5B /* PSRMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F42EFE719097ED100B91F5B /* PSRMasterViewController.m */; };
 		1F42EFEB190989DC00B91F5B /* PSRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F42EFEA190989DC00B91F5B /* PSRDetailViewController.m */; };
 		1F876B9D19165105009DA0BB /* yoda.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F876B9C19165105009DA0BB /* yoda.png */; };
+		842A2BC219D5B76E00C08459 /* PSRFontSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A2BC119D5B76E00C08459 /* PSRFontSelectViewController.m */; };
+		842A2BC519D5B7E200C08459 /* PSRFontSelectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A2BC419D5B7E200C08459 /* PSRFontSelectCellView.m */; };
 		843CBEE019D5680700B2C2F1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843CBEDF19D5680700B2C2F1 /* Storyboard.storyboard */; };
 		843CBEE319D56C1100B2C2F1 /* PSRColorSelectSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CBEE219D56C1100B2C2F1 /* PSRColorSelectSliderView.m */; };
 		843CBEE619D56C2A00B2C2F1 /* PSRColorSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CBEE519D56C2A00B2C2F1 /* PSRColorSelectViewController.m */; };
@@ -65,6 +67,10 @@
 		1F42EFE9190989DC00B91F5B /* PSRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRDetailViewController.h; sourceTree = "<group>"; };
 		1F42EFEA190989DC00B91F5B /* PSRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRDetailViewController.m; sourceTree = "<group>"; };
 		1F876B9C19165105009DA0BB /* yoda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoda.png; sourceTree = "<group>"; };
+		842A2BC019D5B76E00C08459 /* PSRFontSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRFontSelectViewController.h; sourceTree = "<group>"; };
+		842A2BC119D5B76E00C08459 /* PSRFontSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRFontSelectViewController.m; sourceTree = "<group>"; };
+		842A2BC319D5B7E200C08459 /* PSRFontSelectCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRFontSelectCellView.h; sourceTree = "<group>"; };
+		842A2BC419D5B7E200C08459 /* PSRFontSelectCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRFontSelectCellView.m; sourceTree = "<group>"; };
 		843CBEDF19D5680700B2C2F1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		843CBEE119D56C1100B2C2F1 /* PSRColorSelectSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRColorSelectSliderView.h; sourceTree = "<group>"; };
 		843CBEE219D56C1100B2C2F1 /* PSRColorSelectSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRColorSelectSliderView.m; sourceTree = "<group>"; };
@@ -144,6 +150,10 @@
 				843CBEE219D56C1100B2C2F1 /* PSRColorSelectSliderView.m */,
 				843CBEE419D56C2A00B2C2F1 /* PSRColorSelectViewController.h */,
 				843CBEE519D56C2A00B2C2F1 /* PSRColorSelectViewController.m */,
+				842A2BC019D5B76E00C08459 /* PSRFontSelectViewController.h */,
+				842A2BC119D5B76E00C08459 /* PSRFontSelectViewController.m */,
+				842A2BC319D5B7E200C08459 /* PSRFontSelectCellView.h */,
+				842A2BC419D5B7E200C08459 /* PSRFontSelectCellView.m */,
 			);
 			path = SimpleNotes;
 			sourceTree = "<group>";
@@ -287,9 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F42EFC1190978A700B91F5B /* PSRAppDelegate.m in Sources */,
+				842A2BC519D5B7E200C08459 /* PSRFontSelectCellView.m in Sources */,
 				1F42EFE4190978E200B91F5B /* PSRNoteManager.m in Sources */,
 				1F42EFE3190978E200B91F5B /* PSRNote.m in Sources */,
 				1F42EFEB190989DC00B91F5B /* PSRDetailViewController.m in Sources */,
+				842A2BC219D5B76E00C08459 /* PSRFontSelectViewController.m in Sources */,
 				843CBEE619D56C2A00B2C2F1 /* PSRColorSelectViewController.m in Sources */,
 				1F42EFE819097ED100B91F5B /* PSRMasterViewController.m in Sources */,
 				1F42EFBD190978A700B91F5B /* main.m in Sources */,
