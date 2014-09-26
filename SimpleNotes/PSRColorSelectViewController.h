@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSRColorSelectViewController : UIView
+@class PSRColorSelectViewController;
+@protocol PSRColorSelectViewControllerDelegate <NSObject>
+
+-(void)colorSelectViewController:(PSRColorSelectViewController *)controller didFinishWithColor:(UIColor *)color;
+
+@end
+
+@class PSRColorSelectSliderView;
+@interface PSRColorSelectViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet PSRColorSelectSliderView *colorSelectView;
+@property(nonatomic, strong) UIColor *selectedColor;
+@property(nonatomic, weak)id<PSRColorSelectViewControllerDelegate> delegate;
 
 @end

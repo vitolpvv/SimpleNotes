@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Color Select View Controller-->
         <scene sceneID="9kp-2y-oWp">
             <objects>
-                <viewController id="Zf4-XX-hkM" sceneMemberID="viewController">
+                <viewController id="Zf4-XX-hkM" customClass="PSRColorSelectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UIG-Iw-ijT"/>
                         <viewControllerLayoutGuide type="bottom" id="7KR-oQ-MCF"/>
@@ -50,9 +50,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="xat-pC-lri">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="eaO-sW-NgD"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="eaO-sW-NgD">
+                            <connections>
+                                <action selector="didPressDoneButton:" destination="Zf4-XX-hkM" id="zNW-gR-O9o"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="colorSelectView" destination="jLx-6d-LT8" id="IQL-yu-gJb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQd-xF-WdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,15 +7,19 @@
 //
 
 #import "PSRColorSelectViewController.h"
+#import "PSRColorSelectSliderView.h"
 
 @implementation PSRColorSelectViewController
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    self.colorSelectView.color = [UIColor redColor];
+//    self.colorSelectView.color = self.selectedColor;
 }
-*/
+
+- (IBAction)didPressDoneButton:(UIBarButtonItem *)sender {
+    [self.delegate colorSelectViewController:self didFinishWithColor:self.colorSelectView.color];
+}
+
 
 @end
