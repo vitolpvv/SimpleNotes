@@ -13,8 +13,7 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.colorSelectView.color = [UIColor redColor];
-//    self.colorSelectView.color = self.selectedColor;
+    self.colorSelectView.color = self.selectedColor;
 }
 
 - (IBAction)didPressDoneButton:(UIBarButtonItem *)sender {

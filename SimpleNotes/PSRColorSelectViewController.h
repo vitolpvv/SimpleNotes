@@ -18,7 +18,7 @@
 @class PSRColorSelectSliderView;
 @interface PSRColorSelectViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet PSRColorSelectSliderView *colorSelectView;
+@property (strong, nonatomic) IBOutlet PSRColorSelectSliderView *colorSelectView;
 @property(nonatomic, strong) UIColor *selectedColor;
 @property(nonatomic, weak)id<PSRColorSelectViewControllerDelegate> delegate;
 
