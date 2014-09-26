@@ -24,6 +24,7 @@
 		1F42EFE819097ED100B91F5B /* PSRMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F42EFE719097ED100B91F5B /* PSRMasterViewController.m */; };
 		1F42EFEB190989DC00B91F5B /* PSRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F42EFEA190989DC00B91F5B /* PSRDetailViewController.m */; };
 		1F876B9D19165105009DA0BB /* yoda.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F876B9C19165105009DA0BB /* yoda.png */; };
+		843CBEE019D5680700B2C2F1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843CBEDF19D5680700B2C2F1 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		1F42EFE9190989DC00B91F5B /* PSRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRDetailViewController.h; sourceTree = "<group>"; };
 		1F42EFEA190989DC00B91F5B /* PSRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRDetailViewController.m; sourceTree = "<group>"; };
 		1F876B9C19165105009DA0BB /* yoda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoda.png; sourceTree = "<group>"; };
+		843CBEDF19D5680700B2C2F1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				1F42EFE5190978EC00B91F5B /* Model */,
 				1F42EFC2190978A700B91F5B /* Images.xcassets */,
 				1F42EFB7190978A700B91F5B /* Supporting Files */,
+				843CBEDF19D5680700B2C2F1 /* Storyboard.storyboard */,
 			);
 			path = SimpleNotes;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F876B9D19165105009DA0BB /* yoda.png in Resources */,
+				843CBEE019D5680700B2C2F1 /* Storyboard.storyboard in Resources */,
 				1F42EFBB190978A700B91F5B /* InfoPlist.strings in Resources */,
 				1F42EFC3190978A700B91F5B /* Images.xcassets in Resources */,
 			);
