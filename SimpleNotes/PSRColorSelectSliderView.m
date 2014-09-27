@@ -10,14 +10,6 @@
 
 @implementation PSRColorSelectSliderView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 -(IBAction)didChangeSliderValue:(id)sender {
     self.color = [[UIColor alloc] initWithRed: self.redSlider.value green:self.greenSleder.value blue:self.blueSlider.value alpha:1];
 }
