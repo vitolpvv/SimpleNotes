@@ -7,7 +7,6 @@
 //
 
 #import "PSRFontSelectViewController.h"
-#import "PSRFontSelectCellView.h"
 
 @interface PSRFontSelectViewController ()
 

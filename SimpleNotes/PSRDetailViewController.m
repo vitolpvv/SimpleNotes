@@ -18,9 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [[UIColor alloc] initWithRed:0.9 green:0.9 blue:0.9 alpha:1];
+    
     CGRect textViewRect = self.view.bounds;
-    textViewRect.size.height /= 2;
+    textViewRect.size.height -= 50;
     self.textView = [[UITextView alloc] initWithFrame:textViewRect];
     [self.view addSubview:self.textView];
     
@@ -39,7 +40,7 @@
     selectButtonRect.size.width = textViewRect.size.width / 2;
     selectButtonRect.size.height = 50;
     
-    UIButton *selectColorButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    UIButton *selectColorButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [selectColorButton setFrame:selectButtonRect];
     [selectColorButton setTitle:@"Select Color" forState:UIControlStateNormal];
     [selectColorButton addTarget:self action:@selector(selectColor) forControlEvents:UIControlEventTouchUpInside];
