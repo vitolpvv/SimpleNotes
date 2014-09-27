@@ -132,6 +132,7 @@
 		1F42EFB6190978A700B91F5B /* SimpleNotes */ = {
 			isa = PBXGroup;
 			children = (
+				1F42EFC2190978A700B91F5B /* Images.xcassets */,
 				1F42EFBF190978A700B91F5B /* PSRAppDelegate.h */,
 				1F42EFC0190978A700B91F5B /* PSRAppDelegate.m */,
 				1F42EFE619097ED100B91F5B /* PSRMasterViewController.h */,
@@ -139,16 +140,11 @@
 				1F42EFE9190989DC00B91F5B /* PSRDetailViewController.h */,
 				1F42EFEA190989DC00B91F5B /* PSRDetailViewController.m */,
 				1F876B9C19165105009DA0BB /* yoda.png */,
-				1F42EFE5190978EC00B91F5B /* Model */,
-				1F42EFC2190978A700B91F5B /* Images.xcassets */,
-				1F42EFB7190978A700B91F5B /* Supporting Files */,
 				843CBEDF19D5680700B2C2F1 /* Storyboard.storyboard */,
-				843CBEE119D56C1100B2C2F1 /* PSRColorSelectSliderView.h */,
-				843CBEE219D56C1100B2C2F1 /* PSRColorSelectSliderView.m */,
-				843CBEE419D56C2A00B2C2F1 /* PSRColorSelectViewController.h */,
-				843CBEE519D56C2A00B2C2F1 /* PSRColorSelectViewController.m */,
-				842A2BC019D5B76E00C08459 /* PSRFontSelectViewController.h */,
-				842A2BC119D5B76E00C08459 /* PSRFontSelectViewController.m */,
+				1F42EFE5190978EC00B91F5B /* Model */,
+				841858B219D649A800C83948 /* ColorSelector */,
+				841858B319D64A1300C83948 /* FontSelector */,
+				1F42EFB7190978A700B91F5B /* Supporting Files */,
 			);
 			path = SimpleNotes;
 			sourceTree = "<group>";
@@ -191,6 +187,26 @@
 				1F42EFE2190978E200B91F5B /* PSRNoteManager.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		841858B219D649A800C83948 /* ColorSelector */ = {
+			isa = PBXGroup;
+			children = (
+				843CBEE119D56C1100B2C2F1 /* PSRColorSelectSliderView.h */,
+				843CBEE219D56C1100B2C2F1 /* PSRColorSelectSliderView.m */,
+				843CBEE419D56C2A00B2C2F1 /* PSRColorSelectViewController.h */,
+				843CBEE519D56C2A00B2C2F1 /* PSRColorSelectViewController.m */,
+			);
+			name = ColorSelector;
+			sourceTree = "<group>";
+		};
+		841858B319D64A1300C83948 /* FontSelector */ = {
+			isa = PBXGroup;
+			children = (
+				842A2BC019D5B76E00C08459 /* PSRFontSelectViewController.h */,
+				842A2BC119D5B76E00C08459 /* PSRFontSelectViewController.m */,
+			);
+			name = FontSelector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
