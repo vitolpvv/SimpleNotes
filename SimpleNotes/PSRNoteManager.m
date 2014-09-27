@@ -72,6 +72,7 @@
     if (noteToUpdate) {
         noteToUpdate.text = note.text;
         noteToUpdate.color = note.color;
+        noteToUpdate.font = note.font;
     } else {
         [_notes insertObject:note atIndex:0];
     }

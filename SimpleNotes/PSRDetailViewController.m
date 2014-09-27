@@ -8,8 +8,9 @@
 
 #import "PSRDetailViewController.h"
 #import "PSRColorSelectViewController.h"
+#import "PSRFontSelectViewController.h"
 
-@interface PSRDetailViewController () <PSRColorSelectViewControllerDelegate>
+@interface PSRDetailViewController () <PSRColorSelectViewControllerDelegate, PSRFontSelectViewControllerDelegate>
 
 @end
 
@@ -28,20 +29,28 @@
     if (self.note) {
         self.textView.text = self.note.text;
         self.textView.textColor = self.note.color;
+        self.textView.font = self.note.font;
     }
     
     self.navigationItem.title = self.note.text;
     
-    CGRect selectColorButtonRect = textViewRect;
-    selectColorButtonRect.origin.y += textViewRect.size.height;
-    selectColorButtonRect.size.width = textViewRect.size.width / 2;
-    selectColorButtonRect.size.height = 50;
+    CGRect selectButtonRect = textViewRect;
+    selectButtonRect.origin.y += textViewRect.size.height;
+    selectButtonRect.size.width = textViewRect.size.width / 2;
+    selectButtonRect.size.height = 50;
     
     UIButton *selectColorButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [selectColorButton setFrame:selectColorButtonRect];
-    [selectColorButton setTitle:@"Select Text Color" forState:UIControlStateNormal];
+    [selectColorButton setFrame:selectButtonRect];
+    [selectColorButton setTitle:@"Select Color" forState:UIControlStateNormal];
     [selectColorButton addTarget:self action:@selector(selectColor) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:selectColorButton];
+    
+    selectButtonRect.origin.x += selectButtonRect.size.width;
+    UIButton *selectFontButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [selectFontButton setFrame:selectButtonRect];
+    [selectFontButton setTitle:@"Select Font" forState:UIControlStateNormal];
+    [selectFontButton addTarget:self action:@selector(selectFont) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:selectFontButton];
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = cancelButton;
@@ -54,9 +63,23 @@
     [self.navigationController pushViewController:selectColorVC animated:YES];
 }
 
+-(IBAction)selectFont {
+    PSRFontSelectViewController *selectFontVC = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"selectFontViewController"];
+    selectFontVC.delegate = self;
+    [self.navigationController pushViewController:selectFontVC animated:YES];
+}
+
 -(void)colorSelectViewController:(PSRColorSelectViewController *)controller didFinishWithColor:(UIColor *)color {
     self.note.color = color;
     self.textView.textColor = color;
+    [controller.navigationController popToViewController:self animated:YES];
+}
+
+-(void)fontSelectViewControler:(PSRFontSelectViewController *)controller didFinishWithFont:(UIFont *)font {
+    if (font != nil) {
+        self.note.font = font;
+        self.textView.font = font;
+    }
     [controller.navigationController popToViewController:self animated:YES];
 }
 

@@ -21,12 +21,13 @@
     [super viewDidLoad];
     
     self.allFonts = [NSMutableArray new];
-    
-    NSArray *allFontsFamilies = [UIFont familyNames];
-    
+    NSArray *allFontsFamilies = [UIFont familyNames];    
     for (NSString *fontsFamily in allFontsFamilies) {
         [self.allFonts addObjectsFromArray:[UIFont fontNamesForFamilyName:fontsFamily]];
     }
+    [self.allFonts sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(NSString *)obj1 caseInsensitiveCompare:(NSString *)obj2];
+    }];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -54,7 +55,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PSRFontSelectCellView *cell = [tableView dequeueReusableCellWithIdentifier:@"fontSelectCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fontSelectCell" forIndexPath:indexPath];
     // Configure the cell...
     cell.textLabel.text = [self.allFonts objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:cell.textLabel.text size:[UIFont systemFontSize]];
@@ -63,8 +64,11 @@
 }
 
 - (IBAction)didPressDoneButton:(UIBarButtonItem *)sender {
+    UIFont *font = nil;
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
-    UIFont *font = [UIFont fontWithName:[self.tableView cellForRowAtIndexPath:index].textLabel.text size:[UIFont systemFontSize]];
+    if (index != nil) {
+        font = [UIFont fontWithName:[self.allFonts objectAtIndex:index.row] size:[UIFont systemFontSize]];
+    }
     [self.delegate fontSelectViewControler:self didFinishWithFont:font];
 }
 

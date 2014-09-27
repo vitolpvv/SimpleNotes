@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uIz-ni-EfH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="geW-iO-nZx">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -62,18 +63,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQd-xF-WdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="298"/>
+            <point key="canvasLocation" x="1596" y="108"/>
         </scene>
         <!--Font Select View Controller-->
         <scene sceneID="odQ-sc-PHC">
             <objects>
-                <tableViewController id="B0G-8B-EP8" customClass="PSRFontSelectViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="selectFontViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B0G-8B-EP8" customClass="PSRFontSelectViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eje-dQ-ozt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fontSelectCell" textLabel="TYc-oP-J43" style="IBUITableViewCellStyleDefault" id="PrY-fn-ISj" customClass="PSRFontSelectCellView">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fontSelectCell" textLabel="TYc-oP-J43" style="IBUITableViewCellStyleDefault" id="PrY-fn-ISj">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PrY-fn-ISj" id="91z-u2-70b">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -104,7 +105,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHF-pu-xtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="899"/>
+            <point key="canvasLocation" x="1596" y="624"/>
         </scene>
         <!--Master View Controller-->
         <scene sceneID="4Zj-LQ-0BJ">
@@ -121,10 +122,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="BLr-6z-CJG"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="Zf4-XX-hkM" kind="show" identifier="ColorSelectViewControllerSegue" id="T3a-O3-sP5"/>
+                        <segue destination="B0G-8B-EP8" kind="show" identifier="FontSelectViewControllerSegue" id="ASx-5d-c14"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NeE-JE-vgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="298"/>
+            <point key="canvasLocation" x="1029" y="298"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XEX-4d-R0d">
@@ -144,25 +149,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mmr-lp-al4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276" y="298"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="883-m7-LQ7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uIz-ni-EfH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hlt-Hi-yfd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="B0G-8B-EP8" kind="relationship" relationship="rootViewController" id="wZn-0c-wPv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fUQ-mY-lzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="738" y="899"/>
         </scene>
     </scenes>
 </document>
