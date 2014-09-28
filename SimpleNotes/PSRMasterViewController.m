@@ -31,6 +31,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     [self.view addSubview:self.tableView];
     self.navigationItem.title = @"Notes";
@@ -68,6 +69,7 @@
     cell.textLabel.text = note.text;
     cell.textLabel.textColor = note.color;
     cell.textLabel.font = note.font;
+    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
