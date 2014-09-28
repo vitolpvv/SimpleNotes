@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="geW-iO-nZx">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="WVq-LL-xrf">
+            <objects>
+                <viewController id="CSW-eI-i36" customClass="PSRDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FeH-wn-8Si"/>
+                        <viewControllerLayoutGuide type="bottom" id="WsY-R1-uVc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UeQ-c4-TLu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="Zf4-XX-hkM" kind="show" identifier="ColorSelect" id="G4r-eF-RhE"/>
+                        <segue destination="B0G-8B-EP8" kind="show" identifier="FontSelect" id="1op-3P-LHl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZG-9P-R81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1487" y="298"/>
+        </scene>
         <!--Color Select View Controller-->
         <scene sceneID="9kp-2y-oWp">
             <objects>
@@ -19,12 +43,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLx-6d-LT8" customClass="PSRColorSelectSliderView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="209"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UnV-zH-mRW">
-                                        <rect key="frame" x="42" y="90" width="236" height="31"/>
-                                        <connections>
-                                            <action selector="didChangeSliderValue:" destination="jLx-6d-LT8" eventType="valueChanged" id="e3L-jO-HyX"/>
-                                        </connections>
-                                    </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="X4Z-gb-O7h">
                                         <rect key="frame" x="42" y="156" width="236" height="31"/>
                                         <connections>
@@ -35,6 +53,12 @@
                                         <rect key="frame" x="42" y="23" width="236" height="31"/>
                                         <connections>
                                             <action selector="didChangeSliderValue:" destination="jLx-6d-LT8" eventType="valueChanged" id="YMC-kM-Y9u"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UnV-zH-mRW">
+                                        <rect key="frame" x="42" y="90" width="236" height="31"/>
+                                        <connections>
+                                            <action selector="didChangeSliderValue:" destination="jLx-6d-LT8" eventType="valueChanged" id="e3L-jO-HyX"/>
                                         </connections>
                                     </slider>
                                 </subviews>
@@ -61,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQd-xF-WdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596" y="108"/>
+            <point key="canvasLocation" x="1954" y="48"/>
         </scene>
         <!--Font Select View Controller-->
         <scene sceneID="odQ-sc-PHC">
@@ -103,7 +127,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHF-pu-xtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596" y="624"/>
+            <point key="canvasLocation" x="1954" y="564"/>
         </scene>
         <!--Master View Controller-->
         <scene sceneID="4Zj-LQ-0BJ">
@@ -121,8 +145,7 @@
                     <navigationItem key="navigationItem" id="BLr-6z-CJG"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <segue destination="Zf4-XX-hkM" kind="show" identifier="ColorSelectViewControllerSegue" id="T3a-O3-sP5"/>
-                        <segue destination="B0G-8B-EP8" kind="show" identifier="FontSelectViewControllerSegue" id="ASx-5d-c14"/>
+                        <segue destination="CSW-eI-i36" kind="show" identifier="DetailView" id="6vM-60-mdj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NeE-JE-vgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,7 +169,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mmr-lp-al4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276" y="298"/>
+            <point key="canvasLocation" x="568" y="298"/>
         </scene>
     </scenes>
 </document>
