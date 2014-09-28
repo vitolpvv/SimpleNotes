@@ -75,10 +75,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PSRDetailViewController *detailVC = [[PSRDetailViewController alloc] init];
-    PSRNote *note = [[[PSRNoteManager sharedManager] notes] objectAtIndex:indexPath.row];
-    detailVC.note = note;
-    [self.navigationController pushViewController:detailVC animated:YES];
+    [self performSegueWithIdentifier:@"DetailView" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"DetailView"]) {
+        PSRDetailViewController *controller = [segue destinationViewController];
+        controller.note = [[[PSRNoteManager sharedManager] notes] objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
 }
 
 @end

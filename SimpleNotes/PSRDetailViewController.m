@@ -25,15 +25,12 @@
     self.textView = [[UITextView alloc] initWithFrame:textViewRect];
     [self.view addSubview:self.textView];
     
-    
-    
     if (self.note) {
         self.textView.text = self.note.text;
         self.textView.textColor = self.note.color;
         self.textView.font = self.note.font;
+        self.navigationItem.title = self.note.text;
     }
-    
-    self.navigationItem.title = self.note.text;
     
     CGRect selectButtonRect = textViewRect;
     selectButtonRect.origin.y += textViewRect.size.height;
@@ -53,43 +50,47 @@
     [selectFontButton addTarget:self action:@selector(selectFont) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:selectFontButton];
     
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
-    self.navigationItem.rightBarButtonItem = cancelButton;
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveChanges)];
+    self.navigationItem.rightBarButtonItem = doneButton;
 }
 
--(IBAction)selectColor {    
-    PSRColorSelectViewController *selectColorVC = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"selectColorViewController"];
-    selectColorVC.delegate = self;
-    selectColorVC.selectedColor = self.note.color;
-    [self.navigationController pushViewController:selectColorVC animated:YES];
+-(void)selectColor {
+    [self performSegueWithIdentifier:@"ColorSelect" sender:self];
 }
 
--(IBAction)selectFont {
-    PSRFontSelectViewController *selectFontVC = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"selectFontViewController"];
-    selectFontVC.delegate = self;
-    [self.navigationController pushViewController:selectFontVC animated:YES];
+-(void)selectFont {
+    [self performSegueWithIdentifier:@"FontSelect" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"ColorSelect"]) {
+        PSRColorSelectViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
+        controller.selectedColor = self.note.color;
+    } else if ([[segue identifier] isEqualToString:@"FontSelect"]) {
+        PSRFontSelectViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
+    }
 }
 
 -(void)colorSelectViewController:(PSRColorSelectViewController *)controller didFinishWithColor:(UIColor *)color {
-    self.note.color = color;
     self.textView.textColor = color;
     [controller.navigationController popToViewController:self animated:YES];
 }
 
 -(void)fontSelectViewControler:(PSRFontSelectViewController *)controller didFinishWithFont:(UIFont *)font {
     if (font != nil) {
-        self.note.font = font;
         self.textView.font = font;
     }
     [controller.navigationController popToViewController:self animated:YES];
 }
 
-- (void)cancel {
-    
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)saveChanges {
+    self.note.font = self.textView.font;
+    self.note.color = self.textView.textColor;
     self.note.text = self.textView.text;
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end
