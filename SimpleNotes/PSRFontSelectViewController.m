@@ -11,6 +11,7 @@
 @interface PSRFontSelectViewController ()
 
 @property (nonatomic, strong) NSMutableArray *allFonts;
+@property (nonatomic, strong) UIFont *font;
 
 @end
 
@@ -18,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.font = nil;
     
     self.allFonts = [NSMutableArray new];
     NSArray *allFontsFamilies = [UIFont familyNames];    
@@ -45,20 +48,22 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fontSelectCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fontSelectCell"
+                                                            forIndexPath:indexPath];
     cell.textLabel.text = [self.allFonts objectAtIndex:indexPath.row];
-    cell.textLabel.font = [UIFont fontWithName:cell.textLabel.text size:[UIFont systemFontSize]];
+    cell.textLabel.font = [UIFont fontWithName:cell.textLabel.text
+                                          size:[UIFont systemFontSize]];
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.font = [UIFont fontWithName:self.allFonts[indexPath.row]
+                                size:[UIFont systemFontSize]];
+}
+
 - (IBAction)didPressDoneButton:(UIBarButtonItem *)sender {
-    UIFont *font = nil;
-    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
-    if (index != nil) {
-        font = [UIFont fontWithName:[self.allFonts objectAtIndex:index.row] size:[UIFont systemFontSize]];
-    }
-    [self.delegate fontSelectViewControler:self didFinishWithFont:font];
+    [self.delegate fontSelectViewControler:self didFinishWithFont:self.font];
 }
 
 @end

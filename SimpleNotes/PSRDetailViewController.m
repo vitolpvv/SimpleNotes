@@ -67,7 +67,7 @@
     if ([[segue identifier] isEqualToString:@"ColorSelect"]) {
         PSRColorSelectViewController *controller = [segue destinationViewController];
         controller.delegate = self;
-        controller.selectedColor = self.note.color;
+        controller.selectedColor = self.textView.textColor;
     } else if ([[segue identifier] isEqualToString:@"FontSelect"]) {
         PSRFontSelectViewController *controller = [segue destinationViewController];
         controller.delegate = self;
